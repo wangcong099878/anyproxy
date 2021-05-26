@@ -16,7 +16,7 @@ const proxyServer = new AnyProxy.ProxyServer(options);
 
 proxyServer.on('ready', () => {
   console.log('ready');
-  // set as system proxy
+  // set as system proxy  设为系统代理
   proxyServer.close().then(() => {
     const proxyServerB = new AnyProxy.ProxyServer(options);
     proxyServerB.start();

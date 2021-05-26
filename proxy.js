@@ -81,6 +81,7 @@ class ProxyCore extends events.EventEmitter {
       logUtil.setPrintStatus(false);
     }
 
+    //限速处理
     if (config.throttle) {
       logUtil.printLog('throttle :' + config.throttle + 'kb/s');
       const rate = parseInt(config.throttle, 10);
@@ -90,10 +91,10 @@ class ProxyCore extends events.EventEmitter {
       global._throttle = new ThrottleGroup({ rate: 1024 * rate }); // rate - byte/sec
     }
 
-    // init recorder
+    // init recorder  初始化记录器
     this.recorder = config.recorder;
 
-    // init request handler
+    // init request handler  初始化请求处理程序
     const RequestHandler = util.freshRequire('./requestHandler');
     this.requestHandler = new RequestHandler({
       wsIntercept: config.wsIntercept,

@@ -1,3 +1,8 @@
+npm config set phantomjs-prebuilt_download_host=https://npm.taobao.org/mirrors
+npm config set phantom_download_host=https://npm.taobao.org/mirrors
+
+npm install co
+
 AnyProxy
 ----------------
 

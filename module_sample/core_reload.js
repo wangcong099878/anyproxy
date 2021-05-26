@@ -37,7 +37,7 @@ const proxyServerB = new AnyProxy.ProxyCore(optionsB);
 proxyServerA.start();
 proxyServerB.start();
 
-// after both ready
+// after both ready   开启多个
 setTimeout(() => {
   exec('curl http://www.qq.com --proxy http://127.0.0.1:8001');
   exec('curl http://www.sina.com.cn --proxy http://127.0.0.1:8005');
